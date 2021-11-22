@@ -839,10 +839,12 @@
   };
 
   GPS.prototype["setState"] = function (state) {
+    console.log("Setting state to -> ", state)
     this["state"] = {
       ...this["state"],
       ...state,
     };
+    console.log("new state -> ", this["state"])
   };
 
   GPS.prototype["on"] = function (ev, cb) {
