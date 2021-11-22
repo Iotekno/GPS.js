@@ -18,7 +18,11 @@ declare class GPS {
    */
   updatePartial(chunk: string): void;
 
-  setState(state: GPS.GPSState): void;
+  /**
+   * Manually update state
+   * @param state object with state
+   */
+  setState(state: GPS.RMC): void;
 
   /**
    * Adds an event listener for a protocol to occur (see implemented protocols, simply use the name - upper case) or for all sentences with data.
