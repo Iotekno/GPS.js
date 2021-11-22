@@ -22,7 +22,7 @@ declare class GPS {
    * Manually update state
    * @param state object with state
    */
-  setState(state: GPS.RMC): void;
+  setState(state: CustomState): void;
 
   /**
    * Adds an event listener for a protocol to occur (see implemented protocols, simply use the name - upper case) or for all sentences with data.
@@ -89,6 +89,17 @@ declare namespace GPS {
   export interface LatLon {
     lat: number;
     lon: number;
+  }
+
+  export interface CustomState {
+    time?: Date;
+    lat?: number;
+    lon?: number;
+    alt?: number;
+    speed?: number;
+    track?: number;
+    satsActive?: number[];
+    satsVisible?: Satellite[];
   }
 
   export interface GPSState {
