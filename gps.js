@@ -288,6 +288,7 @@
    * @constructor
    */
   function GPS(initialState) {
+    console.log("initialState -> ", initialState);
     if (!(this instanceof GPS)) {
       return new GPS();
     }

@@ -56,7 +56,7 @@ describe("partial updates", function () {
   // it("should use previous track when it is missing", function (done) {});
 
   it.only("should use the track in the constructor", (done) => {
-    var gps = new GPS();
+    var gps = new GPS({ track: "248" });
 
     var K = 0;
 
