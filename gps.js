@@ -287,14 +287,13 @@
    *
    * @constructor
    */
-  function GPS(initialState) {
-    console.log("initialState -> ", initialState);
+  function GPS() {
     if (!(this instanceof GPS)) {
       return new GPS();
     }
 
     this["events"] = {};
-    this["state"] = { ...initialState, errors: 0, processed: 0 };
+    this["state"] = { errors: 0, processed: 0 };
   }
 
   GPS.prototype["events"] = null;
@@ -837,6 +836,13 @@
       }
       this["partial"] = this["partial"].slice(pos + 2);
     }
+  };
+
+  GPS.prototype["setState"] = function (state) {
+    this["state"] = {
+      ...this["state"],
+      ...state,
+    };
   };
 
   GPS.prototype["on"] = function (ev, cb) {
